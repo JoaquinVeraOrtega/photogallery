@@ -1,139 +1,5 @@
 import reflex as rx
 
-
-data_json = {
-    "galleries": {
-        "commercial": {
-            "tagline": "GUEVARA CONTRACTING REMODELINGS",
-            "title": "Browse Our Gallery",
-            "description": "Welcome to our gallery, where you can explore a diverse range of remodeling projects that highlight our expertise in both residential and commercial spaces. We take pride in showcasing our versatility and commitment to excellence through our varied portfolio.",
-            "items": [
-                {
-                    "image": "https://res.cloudinary.com/xiadom/image/upload/v1724515697/xiadom-websites/guevaracontracting/landing_page/gallery/general/082424-01.webp"
-                },
-                {
-                    "image": "https://res.cloudinary.com/xiadom/image/upload/v1724515697/xiadom-websites/guevaracontracting/landing_page/gallery/general/082424-02.webp"
-                },
-                {
-                    "image": "https://res.cloudinary.com/xiadom/image/upload/v1724515697/xiadom-websites/guevaracontracting/landing_page/gallery/general/082424-03.webp"
-                },
-                {
-                    "image": "https://res.cloudinary.com/xiadom/image/upload/v1724515697/xiadom-websites/guevaracontracting/landing_page/gallery/general/082424-04.webp"
-                },
-                {
-                    "image": "https://res.cloudinary.com/xiadom/image/upload/v1724515697/xiadom-websites/guevaracontracting/landing_page/gallery/general/082424-05.webp"
-                },
-                {
-                    "image": "https://res.cloudinary.com/xiadom/image/upload/v1724515697/xiadom-websites/guevaracontracting/landing_page/gallery/general/082424-06.webp"
-                },
-                {
-                    "image": "https://res.cloudinary.com/xiadom/image/upload/v1724515697/xiadom-websites/guevaracontracting/landing_page/gallery/general/082424-07.webp"
-                },
-                {
-                    "image": "https://res.cloudinary.com/xiadom/image/upload/v1724515697/xiadom-websites/guevaracontracting/landing_page/gallery/general/082424-08.webp"
-                },
-                {
-                    "image": "https://res.cloudinary.com/xiadom/image/upload/v1724515697/xiadom-websites/guevaracontracting/landing_page/gallery/general/082424-09.webp"
-                },
-                {
-                    "image": "https://res.cloudinary.com/xiadom/image/upload/v1724515697/xiadom-websites/guevaracontracting/landing_page/gallery/general/082424-10.webp"
-                },
-                {
-                    "image": "https://res.cloudinary.com/xiadom/image/upload/v1724515697/xiadom-websites/guevaracontracting/landing_page/gallery/general/082424-11.webp"
-                },
-                {
-                    "image": "https://res.cloudinary.com/xiadom/image/upload/v1724515697/xiadom-websites/guevaracontracting/landing_page/gallery/general/082424-12.webp"
-                },
-                {
-                    "image": "https://res.cloudinary.com/xiadom/image/upload/v1724515697/xiadom-websites/guevaracontracting/landing_page/gallery/general/082424-13.webp"
-                },
-                {
-                    "image": "https://res.cloudinary.com/xiadom/image/upload/v1724515697/xiadom-websites/guevaracontracting/landing_page/gallery/general/082424-14.webp"
-                },
-                {
-                    "image": "https://res.cloudinary.com/xiadom/image/upload/v1724515697/xiadom-websites/guevaracontracting/landing_page/gallery/general/082424-15.webp"
-                },
-                {
-                    "image": "https://res.cloudinary.com/xiadom/image/upload/v1724515697/xiadom-websites/guevaracontracting/landing_page/gallery/general/082424-16.webp"
-                },
-                {
-                    "image": "https://res.cloudinary.com/xiadom/image/upload/v1724515697/xiadom-websites/guevaracontracting/landing_page/gallery/general/082424-17.webp"
-                },
-                {
-                    "image": "https://res.cloudinary.com/xiadom/image/upload/v1724515697/xiadom-websites/guevaracontracting/landing_page/gallery/general/082424-18.webp"
-                },
-                {
-                    "image": "https://res.cloudinary.com/xiadom/image/upload/v1724515697/xiadom-websites/guevaracontracting/landing_page/gallery/general/082424-19.webp"
-                },
-                {
-                    "image": "https://res.cloudinary.com/xiadom/image/upload/v1724515697/xiadom-websites/guevaracontracting/landing_page/gallery/general/082424-20.webp"
-                },
-                {
-                    "image": "https://res.cloudinary.com/xiadom/image/upload/v1724515697/xiadom-websites/guevaracontracting/landing_page/gallery/general/082424-21.webp"
-                },
-                {
-                    "image": "https://res.cloudinary.com/xiadom/image/upload/v1724515697/xiadom-websites/guevaracontracting/landing_page/gallery/general/082424-22.webp"
-                },
-                {
-                    "image": "https://res.cloudinary.com/xiadom/image/upload/v1724515697/xiadom-websites/guevaracontracting/landing_page/gallery/general/082424-23.webp"
-                },
-                {
-                    "image": "https://res.cloudinary.com/xiadom/image/upload/v1724515697/xiadom-websites/guevaracontracting/landing_page/gallery/general/082424-24.webp"
-                },
-                {
-                    "image": "https://res.cloudinary.com/xiadom/image/upload/v1724515697/xiadom-websites/guevaracontracting/landing_page/gallery/general/082424-25.webp"
-                },
-                {
-                    "image": "https://res.cloudinary.com/xiadom/image/upload/v1724515697/xiadom-websites/guevaracontracting/landing_page/gallery/general/082424-26.webp"
-                },
-                {
-                    "image": "https://res.cloudinary.com/xiadom/image/upload/v1724515697/xiadom-websites/guevaracontracting/landing_page/gallery/general/082424-27.webp"
-                },
-                {
-                    "image": "https://res.cloudinary.com/xiadom/image/upload/v1724515697/xiadom-websites/guevaracontracting/landing_page/gallery/general/082424-28.webp"
-                },
-                {
-                    "image": "https://res.cloudinary.com/xiadom/image/upload/v1724515697/xiadom-websites/guevaracontracting/landing_page/gallery/general/082424-29.webp"
-                },
-                {
-                    "image": "https://res.cloudinary.com/xiadom/image/upload/v1724515697/xiadom-websites/guevaracontracting/landing_page/gallery/general/082424-30.webp"
-                },
-                {
-                    "image": "https://res.cloudinary.com/xiadom/image/upload/v1724515697/xiadom-websites/guevaracontracting/landing_page/gallery/general/082424-31.webp"
-                },
-                {
-                    "image": "https://res.cloudinary.com/xiadom/image/upload/v1724515697/xiadom-websites/guevaracontracting/landing_page/gallery/general/082424-32.webp"
-                },
-                {
-                    "image": "https://res.cloudinary.com/xiadom/image/upload/v1724515697/xiadom-websites/guevaracontracting/landing_page/gallery/general/082424-33.webp"
-                },
-                {
-                    "image": "https://res.cloudinary.com/xiadom/image/upload/v1724515697/xiadom-websites/guevaracontracting/landing_page/gallery/general/082424-34.webp"
-                },
-                {
-                    "image": "https://res.cloudinary.com/xiadom/image/upload/v1724515697/xiadom-websites/guevaracontracting/landing_page/gallery/general/082424-35.webp"
-                },
-                {
-                    "image": "https://res.cloudinary.com/xiadom/image/upload/v1724515697/xiadom-websites/guevaracontracting/landing_page/gallery/general/082424-36.webp"
-                },
-                {
-                    "image": "https://res.cloudinary.com/xiadom/image/upload/v1724515697/xiadom-websites/guevaracontracting/landing_page/gallery/general/082424-37.webp"
-                },
-                {
-                    "image": "https://res.cloudinary.com/xiadom/image/upload/v1724515697/xiadom-websites/guevaracontracting/landing_page/gallery/general/082424-38.webp"
-                },
-                {
-                    "image": "https://res.cloudinary.com/xiadom/image/upload/v1724515697/xiadom-websites/guevaracontracting/landing_page/gallery/general/082424-39.webp"
-                },
-                {
-                    "image": "https://res.cloudinary.com/xiadom/image/upload/v1724515697/xiadom-websites/guevaracontracting/landing_page/gallery/general/082424-40.webp"
-                },
-            ],
-        }
-    }
-}
-
-
 def create_responsive_image(image_src):
     """Componente de imagen responsiva con efectos on hover."""
     return rx.image(
@@ -163,7 +29,7 @@ def create_image_card(image_src):
     )
 
 
-def create_image_grid():
+def create_image_grid(data_json):
     """Grilla de imagenes que se adapta a distintos tamaños de pantalla. Recorre el dict con la data de las imagenes."""
     return rx.box(
         [
@@ -185,7 +51,7 @@ def create_image_grid():
     )
 
 
-def create_heading_section():
+def create_heading_section(data_json):
     """Componente de encabezado. Crea el titulo, tagline y descripcion a partir del dict con la data"""
     return rx.flex(
         rx.heading(data_json["galleries"]["commercial"]["tagline"], size="5"),
@@ -208,12 +74,12 @@ def create_heading_section():
     )
 
 
-def create_main_content():
+def create_main_content(data_json):
     """Componente principal. Se junta la grilla de imagenes con el encabezado"""
     return rx.box(
         rx.box(
-            create_heading_section(),
-            create_image_grid(),
+            create_heading_section(data_json),
+            create_image_grid(data_json),
             width="100%",
             style=rx.breakpoints(
                 {
@@ -236,11 +102,11 @@ def create_main_content():
     )
 
 
-def render_gallery_component():
+def render_gallery_component(data_json):
     """Carga los scripts necesarios para la funcionalidad lightbox y de animacion al scrollear. Renderiza el componente completo"""
     return rx.fragment(
         rx.box(
-            create_main_content(),
+            create_main_content(data_json),
             rx.script(
                 src="https://unpkg.com/aos@2.3.1/dist/aos.js",
                 on_ready=rx.call_script(
