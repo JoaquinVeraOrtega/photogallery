@@ -5,3 +5,5 @@
 ## Consideraciones:
 
 ### En el archivo principal de la aplicacion, debe configurarse los stylesheets necesarios para la funcionalidad del componente dentro de rx.App(). Tambien debe utilizarse el tema en light, ya que el componente no tiene darkmode (y si no especificamos appearance="light" la app toma por defecto el tema del navegador)
+
+### Se utiliza la libreria reflex-motion para animaciones on scroll

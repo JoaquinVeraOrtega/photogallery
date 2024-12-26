@@ -1,5 +1,8 @@
 import reflex as rx
 
+from reflex_motion import motion
+
+
 def create_responsive_image(image_src):
     """Componente de imagen responsiva con efectos on hover."""
     return rx.image(
@@ -17,15 +20,22 @@ def create_responsive_image(image_src):
 
 def create_image_card(image_src):
     """Componente contenedor de la imagen con afectos de animacion de entrada y lightbox."""
-    return rx.el.a(
-        create_responsive_image(
-            image_src,
+    return motion(
+        rx.el.a(
+            create_responsive_image(
+                image_src,
+            ),
+            href=image_src,
+            custom_attrs={"data-lightbox": "gallery"},
+            display="block",
         ),
-        href=image_src,
-        custom_attrs={"data-lightbox": "gallery"},
-        display="block",
-        data_aos="fade-up",
-        data_aos_duration="2000",
+        initial={"opacity": 0, "y": 100},
+        while_in_view={"opacity": 1, "y": 0},
+        transition={
+            "type": "keyframes",
+            "duration": 1,
+            "delay": 0.3,
+        },
     )
 
 
@@ -107,14 +117,6 @@ def render_gallery_component(data_json):
     return rx.fragment(
         rx.box(
             create_main_content(data_json),
-            rx.script(
-                src="https://unpkg.com/aos@2.3.1/dist/aos.js",
-                on_ready=rx.call_script(
-                    """
-                        AOS.init();
-                    """
-                ),
-            ),
             rx.script(
                 src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js",
                 on_ready=rx.call_script(

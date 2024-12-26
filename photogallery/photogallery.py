@@ -3,9 +3,11 @@
 import reflex as rx
 
 from rxconfig import config
+from reflex_motion import motion
 
-
-from .lightgallery import render_gallery_component #import del componente para utilizarlo en la pagina index
+from .lightgallery import (
+    render_gallery_component,
+)  # import del componente para utilizarlo en la pagina index
 
 data_json = {
     "galleries": {
@@ -139,14 +141,44 @@ data_json = {
     }
 }
 
+
 def index():
     return rx.flex(render_gallery_component(data_json), justify="center")
+    return rx.vstack(
+        # Espaciador inicial para forzar el scroll
+        rx.box(height="150vh"),  # Espacio antes del componente
+
+        # Componente animado
+        motion(
+            rx.box(
+                "Hello, I'm animated on scroll!",
+                bg="teal",
+                color="white",
+                padding="20px",
+                border_radius="10px",
+                width="fit-content",
+                text_align="center",
+                margin="auto",
+            ),
+            initial={"opacity": 0, "y": 100},  # Estado inicial (fuera de vista)
+            while_in_view={"opacity": 1, "y": 0},  # Estado al entrar en vista
+            transition={
+                "type": "keyframes",
+                "stiffness": 65,  # Reduce la rigidez para animación más lenta
+                "damping": 100,  # Suavidad del movimiento
+                "duration": 2.0,  # Duración total de la animación (segundos)
+                "delay": 0.3,  # Retardo inicial para hacer la animación más evidente
+            },
+        ),
+
+        # Espaciador final
+        rx.box(height="150vh"),  # Espacio después del componente
+    )
 
 
 app = rx.App(
     stylesheets=[
-        "https://unpkg.com/aos@2.3.1/dist/aos.css", #css para las animaciones on scroll
-        "https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css", #css para la funcionalidad lightbox de la galeria de imagenes
+        "https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css",  # css para la funcionalidad lightbox de la galeria de imagenes
     ],
     theme=rx.theme(
         appearance="light",
